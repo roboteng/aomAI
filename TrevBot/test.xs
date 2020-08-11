@@ -1,6 +1,9 @@
+include "TrevBot/tbUtils.xs";
+
 rule test
   //active //if on
-  runImmediately //still runs at the start of game if off
+  inactive
+  //runImmediately //still runs at the start of game if off
   minInterval 1 //number of seconds
 {
   int time = xsGetTime();
@@ -76,6 +79,7 @@ void scout()
   int exploreID=aiPlanCreate("Explore_SpecialGreek", cPlanExplore);
   if (exploreID >= 0)
   {
+     aiEcho("Scouting with: ");
      aiPlanAddUnitType(exploreID, cUnitTypeScout, 1, 1, 1);
      aiPlanSetActive(exploreID);
   }
@@ -96,9 +100,11 @@ void introDisplay()
 void trevBot(void){
 
   //Do some stuff, don't really know what...
-  kbLookAtAllUnitsOnMap();
   kbAreaCalculate(1200.0);
+  kbLookAtAllUnitsOnMap();
   aiRandSetSeed();
+
+  kbDump(1,2);
 
   introDisplay();
   maintainNumberOfUnits(cUnitTypeVillagerGreek, 10);

@@ -1,11 +1,7 @@
 <AI>
    <script>TrevBot</script>
-   <nameID>81000</nameID>
+   <name>TrevBot</name>
    <playerNames>
-		<nameID>81000<culture>Greek</culture></nameID>
-    <nameID>81000<culture>Norse</culture></nameID>
-    <nameID>81000<culture>Egyptian</culture></nameID>
-    <nameID>81000<culture>Atlantean</culture></nameID>
-    <nameID>81000<culture>Chinese</culture></nameID>
+		<name>TrevBot</name>
 	</playerNames>
 </AI>
