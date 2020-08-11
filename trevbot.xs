@@ -3,7 +3,8 @@
 //cUnitTypeHuntable
 //kbResourceGet
 
-include "TrevBot/test.xs";
+
+include "TrevBot\test.xs";// "/", "\", and "\\" all work
 
 void main(void)
 {

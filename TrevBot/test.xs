@@ -1,10 +1,10 @@
 rule test
-  active //if on
+  //active //if on
   runImmediately //still runs at the start of game if off
   minInterval 1 //number of seconds
 {
   int time = xsGetTime();
-  aiEcho("imiditate "+time);
+  aiEcho("time "+time);
 }
 
 
@@ -15,7 +15,6 @@ int findIdleVillager()
   int numResults = kbUnitQueryExecute(queryID);
   aiEcho("Found "+numResults+" Results");
   return (numResults);
-
 }
 
 
@@ -25,7 +24,6 @@ void setAllOnFood()
   aiPlanAddUnitType(planID, cUnitTypeVillagerGreek, 1, 10, 10);
   aiEcho("PlanID is "+planID);
   aiPlanSetActive(planID);
-
 }
 
 int maintainNumberOfUnits( int unitID=-1, int num=-1 )
@@ -83,14 +81,26 @@ void scout()
   }
 }
 
-void trevBots(void){
+void introDisplay()
+{
+  aiEcho("AI Player Name: "+cMyName+".");
+  aiEcho("AI Filename='"+cFilename+"'.");
+  aiEcho("Map size is ("+kbGetMapXSize()+", "+kbGetMapZSize()+").");
+  aiEcho("Loader Init, MapName="+cRandomMapName+".");
+  aiEcho("Civ="+kbGetCivName(cMyCiv)+".");
+  aiEcho("Culture="+kbGetCultureName(cMyCulture)+".");
+  aiEcho("DifficultyLevel="+aiGetWorldDifficultyName(aiGetWorldDifficulty())+".");
+  aiEcho("Personality="+aiGetPersonality()+".");
+}
+
+void trevBot(void){
 
   //Do some stuff, don't really know what...
   kbLookAtAllUnitsOnMap();
   kbAreaCalculate(1200.0);
   aiRandSetSeed();
 
-  aiEcho();
+  introDisplay();
   maintainNumberOfUnits(cUnitTypeVillagerGreek, 10);
 
   int mainBaseID = kbBaseCreate(1, "Main Base", kbGetTownLocation());
