@@ -2,6 +2,10 @@
    <script>TrevBot</script>
    <nameID>81000</nameID>
    <playerNames>
-		<nameID>19253<culture>Greek</culture></nameID>
+		<nameID>81000<culture>Greek</culture></nameID>
+    <nameID>81000<culture>Norse</culture></nameID>
+    <nameID>81000<culture>Egyptian</culture></nameID>
+    <nameID>81000<culture>Atlantean</culture></nameID>
+    <nameID>81000<culture>Chinese</culture></nameID>
 	</playerNames>
 </AI>
