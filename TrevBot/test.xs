@@ -1,4 +1,5 @@
 include "TrevBot/tbUtils.xs";
+include "TrevBot/foodEcon.xs";
 
 rule test
   //active //if on
@@ -20,12 +21,18 @@ int findIdleVillager()
   return (numResults);
 }
 
-
-void setAllOnFood()
+rule gather
+  active
+  runImmediately
+  minInterval 10
 {
+  int mainBaseID = kbBaseGetMainID(cMyID);
+
   int planID = aiPlanCreate("gather", cPlanGather);
   aiPlanAddUnitType(planID, cUnitTypeVillagerGreek, 1, 10, 10);
-  aiEcho("PlanID is "+planID);
+  aiPlanSetEconomy(planID, true);
+
+  aiEcho("PlanID for gathering food is "+planID);
   aiPlanSetActive(planID);
 }
 
@@ -104,8 +111,6 @@ void trevBot(void){
   kbLookAtAllUnitsOnMap();
   aiRandSetSeed();
 
-  kbDump(1,2);
-
   introDisplay();
   maintainNumberOfUnits(cUnitTypeVillagerGreek, 10);
 
@@ -119,5 +124,4 @@ void trevBot(void){
   aiPlanAddUnitType(gatherPlan, cUnitTypeUIIdleVillagerBanner, 1, 10, 10);
 
   scout();
-  setAllOnFood();
 }
