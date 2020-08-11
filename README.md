@@ -16,4 +16,5 @@ Start up AoM, and start a new game. Go to customize opponents, and select the AI
 ```
 aiDebug
 showAIEchoes
-logAIErrors```
+logAIErrors
+```
