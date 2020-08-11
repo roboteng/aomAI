@@ -13,6 +13,7 @@ Start up AoM, and start a new game. Go to customize opponents, and select the AI
 ## Other steps
 ### Setting up the debugger
 1. Go to ```/Age of Mythology/startup/``` and create user.cfg with the following contents:
-```aiDebug
+```
+aiDebug
 showAIEchoes
 logAIErrors```
