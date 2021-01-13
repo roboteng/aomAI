@@ -1,5 +1,6 @@
 include "TrevBot/tbUtils.xs";
 include "TrevBot/foodEcon.xs";
+include "TrevBot/buildTemple.xs";
 
 rule test
   //active //if on
@@ -116,9 +117,9 @@ void trevBot(void){
 
   int mainBaseID = kbBaseCreate(1, "Main Base", kbGetTownLocation());
 
-  setupEscrow();
+  //setupEscrow();
 
-  setupEconomyBalance(mainBaseID);
+  //setupEconomyBalance(mainBaseID);
 
   int gatherPlan = aiPlanCreate("Make Villagers Gather Food");
   aiPlanAddUnitType(gatherPlan, cUnitTypeUIIdleVillagerBanner, 1, 10, 10);
